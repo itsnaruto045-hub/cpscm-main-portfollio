@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <!-- Meta & SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPSCM — ক্যান্টনমেন্ট পাবলিক স্কুল ও কলেজ</title>
+  <meta name="description" content="CPSCM (Cantonment Public School & College) — একটি আধুনিক শিক্ষা প্রতিষ্ঠান, শিক্ষার গৌরব ও অনুপ্রেরণা।" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="CPSCM — ক্যান্টনমেন্ট পাবলিক স্কুল ও কলেজ" />
+  <meta property="og:description" content="Neon + Nebula themed single-page site for CPSCM. Replace OG image in assets/og-image.png" />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Minimal external libs: three.js for nebula (CDN) -->
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="color-scheme" content="dark">
+  <!-- Developer hint: replace og-image.png in assets/ -->
+</head>
+<body class="dark">
+  <!-- Fallback content for no-JS: visible site without nebula animation -->
+  <noscript>
+    <div class="no-js-warning">JavaScript is required for nebula and some interactions. The site is still readable.</div>
+  </noscript>
+
+  <!-- Canvas for Nebula / Starfield. three.js is used; CSS fallback below in stylesheet. -->
+  <canvas id="nebula-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="top">
+    <div class="container navcontainer">
+      <a class="brand" href="#hero">CPSCM</a>
+      <nav class="main-nav" aria-label="প্রধান ন্যাভিগেশন">
+        <button id="nav-toggle" aria-expanded="false" aria-controls="nav-list">মেনু</button>
+        <ul id="nav-list">
+          <li><a href="#about">পরিচিতি</a></li>
+          <li><a href="#academic">একাডেমিক</a></li>
+          <li><a href="#admissions">ভর্তির তথ্য</a></li>
+          <li><a href="#faculty">ফ্যাকাল্টি</a></li>
+          <li><a href="#gallery">গ্যালারি</a></li>
+          <li><a href="#events">ইভেন্টস</a></li>
+          <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="mode-toggle" aria-pressed="false" title="Toggle dark/neon mode">🌗</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero" role="region" aria-label="হিরো সেকশন">
+      <div class="container hero-inner">
+        <h1 class="neon display">CPSCM</h1>
+        <p class="tagline">ক্যান্টনমেন্ট পাবলিক স্কুল ও কলেজ — জ্ঞানের পথে নবীন দিগন্ত</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#admissions" id="apply-btn">আবেদন / ভিজিট</a>
+          <a class="btn btn-ghost" href="#about">আরও জানুন</a>
+        </div>
+
+        <div class="counters" aria-hidden="false">
+          <div class="counter"><span data-target="1200" class="count">0</span><small>ছাত্র-ছাত্রী</small></div>
+          <div class="counter"><span data-target="85" class="count">0</span><small>শিক্ষক</small></div>
+          <div class="counter"><span data-target="50" class="count">0</span><small>ক্লাস</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">পরিচিতি</h2>
+        <p class="lead">(Placeholder) CPSCM প্রতিষ্ঠিত ... এখানে স্কুলের ইতিহাস ও মিশন লিখুন। Replace this paragraph with the real history and mission statement in Bangla. Ensure readable font-size and contrast.</p>
+      </div>
+    </section>
+
+    <!-- ACADEMIC -->
+    <section id="academic" class="section" aria-labelledby="academic-title">
+      <div class="container">
+        <h2 id="academic-title">একাডেমিক</h2>
+        <div class="grid cols-3">
+          <article class="card">
+            <h3>প্রাথমিক</h3>
+            <p>প্রাথমিক স্তরের শ্রেণী ও পাঠ্যক্রমের সংক্ষিপ্ত বিবরণ।</p>
+          </article>
+          <article class="card">
+            <h3>মাধ্যমিক</h3>
+            <p>মাধ্যমিক স্তরের পাঠ্যক্রম, কার্যক্রম ও মূল্যায়ন।</p>
+          </article>
+          <article class="card">
+            <h3>উচ্চ মাধ্যমিক</h3>
+            <p>উচ্চ মাধ্যমিক (একাডেমিক বিভাগ) ও কোর্স সমূহ।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMISSIONS -->
+    <section id="admissions" class="section" aria-labelledby="admissions-title">
+      <div class="container">
+        <h2 id="admissions-title">ভর্তি</h2>
+        <p class="lead">প্রার্থী ভর্তি ফর্ম পূরণ করুন বা স্কুলে ভিজিটের জন্য অ্যাপয়েন্টমেন্ট নিন।</p>
+
+        <!-- Admission form: front-end validation. Developer: plug backend at /api/admissions -->
+        <form id="admission-form" novalidate>
+          <div class="form-row">
+            <label for="name">নাম</label>
+            <input id="name" name="name" required minlength="2" aria-required="true" />
+          </div>
+          <div class="form-row">
+            <label for="class">যে ক্লাসে ভর্তি</label>
+            <select id="class" name="class" required>
+              <option value="">বেছে নিন</option>
+              <option>প্রাথমিক</option>
+              <option>মাধ্যমিক</option>
+              <option>উচ্চ মাধ্যমিক</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="phone">ফোন</label>
+            <input id="phone" name="phone" type="tel" pattern="^01[0-9]{9}$" placeholder="01XXXXXXXXX" required />
+          </div>
+          <div class="form-row">
+            <label for="message">মন্তব্য</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">জমা দিন</button>
+            <button type="reset" class="btn btn-ghost">রিসেট</button>
+          </div>
+          <!-- Dev note: replace action below with your server endpoint. Example: action="/api/admissions" method="POST" -->
+        </form>
+      </div>
+    </section>
+
+    <!-- FACULTY -->
+    <section id="faculty" class="section" aria-labelledby="faculty-title">
+      <div class="container">
+        <h2 id="faculty-title">ফ্যাকাল্টি</h2>
+        <p class="lead">নীচে নমুনা ৬ জন শিক্ষকের তালিকা — প্রতিটি ছবি ও বায়ো পরিবর্তন করুন।</p>
+        <div class="grid cols-3 faculty-grid" role="list">
+          <!-- Replace images in assets/faculty-*.jpg -->
+          <article class="teacher" role="listitem">
+            <img src="assets/faculty-1.jpg" alt="Prof. A — Role" loading="lazy">
+            <h3>প্রফেসর সাতে</h3>
+            <small>প্রধান শিক্ষক</small>
+          </article>
+          <article class="teacher" role="listitem">
+            <img src="assets/faculty-2.jpg" alt="Ms. B — Role" loading="lazy">
+            <h3>মিসেস রাফা</h3>
+            <small>গণিত শিক্ষক</small>
+          </article>
+          <article class="teacher" role="listitem">
+            <img src="assets/faculty-3.jpg" alt="Mr. C — Role" loading="lazy">
+            <h3>মিস্টার হানিফ</h3>
+            <small>বিজ্ঞান শিক্ষক</small>
+          </article>
+          <article class="teacher" role="listitem">
+            <img src="assets/faculty-4.jpg" alt="Ms. D — Role" loading="lazy">
+            <h3>মিসেস লায়লা</h3>
+            <small>বাংলা শিক্ষক</small>
+          </article>
+          <article class="teacher" role="listitem">
+            <img src="assets/faculty-5.jpg" alt="Mr. E — Role" loading="lazy">
+            <h3>মিস্টার রিয়াজ</h3>
+            <small>ইতিহাস শিক্ষক</small>
+          </article>
+          <article class="teacher" role="listitem">
+            <img src="assets/faculty-6.jpg" alt="Ms. F — Role" loading="lazy">
+            <h3>মিসেস সাগরী</h3>
+            <small>ইংরেজী শিক্ষক</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title">গ্যালারি</h2>
+        <p class="lead">নমুনা ছবি; লাইটবক্সে দেখুন। Replace with real photos in assets/.</p>
+        <div class="gallery-grid">
+          <button class="gallery-item" data-src="assets/placeholder-1.png" aria-label="Open image 1"><img src="assets/placeholder-1.png" loading="lazy" alt="Gallery 1"></button>
+          <button class="gallery-item" data-src="assets/placeholder-2.png" aria-label="Open image 2"><img src="assets/placeholder-2.png" loading="lazy" alt="Gallery 2"></button>
+          <button class="gallery-item" data-src="assets/placeholder-1.png" aria-label="Open image 3"><img src="assets/placeholder-1.png" loading="lazy" alt="Gallery 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events / Notices -->
+    <section id="events" class="section" aria-labelledby="events-title">
+      <div class="container">
+        <h2 id="events-title">ইভেন্টস / নোটিস</h2>
+        <div class="accordion" role="tablist">
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">বার্ষিক ক্রীড়া প্রতিযোগিতা — তারিখ</button>
+            <div class="accordion-panel">Sample event details: Replace with real event information. </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-toggle" aria-expanded="false">টিউটোরিয়াল শিবির — তারিখ</button>
+            <div class="accordion-panel">Sample notice details for tutorial camp.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">যোগাযোগ</h2>
+        <address>
+          <p>ঠিকানা: Cantonment, City, Bangladesh — Replace with actual address.</p>
+          <p>ফোন: +8801XXXXXXXXX</p>
+          <p>ইমেইল: info@example.com</p>
+        </address>
+        <div class="map-placeholder" aria-hidden="true">[Google Maps embed placeholder] — replace iframe with real embed code.</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (exact credit text required) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="copyright neon-subtle">© SadaF — Copyright by SadaF</div>
+      <div class="credits neon-subtle">TEAM % SDF&gt;_ — Owner: Sadaf — Portfolio: <a href="https://my.oninon.qzz.io" target="_blank" rel="noopener">https://my.oninon.qzz.io</a></div>
+    </div>
+  </footer>
+
+  <!-- Lightbox modal (hidden) -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img class="lightbox-img" alt="Expanded image">
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

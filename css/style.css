@@ -1,0 +1,104 @@
+/* css/style.css */
+/* Neon + Nebula theme styles. Comments explain where to change colors, nebula intensity, and footer credit. */
+:root{
+  --bg:#060616; /* dark space base */
+  --neon: #7ef9ff; /* cyan neon accent */
+  --neon-2: #ff6ef9; /* pink neon accent */
+  --muted: #bfc7d6;
+  --glass: rgba(255,255,255,0.04);
+  --container: 1100px;
+}
+
+/* Basic reset and layout */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:'Space Grotesk', 'Noto Sans Bengali', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--muted); -webkit-font-smoothing:antialiased}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+
+/* Nebula canvas fills screen behind content */
+#nebula-canvas{position:fixed;inset:0;z-index:-1;display:block}
+
+/* Header */
+.site-header{position:sticky;top:0;background:linear-gradient(180deg, rgba(6,6,22,0.65), rgba(6,6,22,0.25));backdrop-filter:blur(6px);z-index:40}
+.navcontainer{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+.brand{font-weight:700;color:var(--neon);text-decoration:none;padding:0.5rem 0;font-size:1.2rem}
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:0.75rem}
+.main-nav a{color:var(--muted);text-decoration:none;padding:0.5rem;border-radius:6px}
+.main-nav a:focus,.main-nav a:hover{color:var(--neon);box-shadow:0 0 10px rgba(126,249,255,0.08)}
+#nav-toggle{display:none}
+
+.header-actions{display:flex;gap:0.5rem}
+
+/* HERO */
+.hero{padding:6rem 0 4rem;text-align:center}
+.hero .display{font-size:clamp(2.75rem,6vw,5rem);margin:0;color:var(--neon);text-shadow:0 0 12px rgba(126,249,255,0.12),0 0 30px rgba(255,110,249,0.05)}
+.tagline{font-family:'Noto Sans Bengali',sans-serif;font-size:1.15rem;color:var(--muted)}
+.hero-ctas{margin-top:1.25rem;display:flex;gap:0.75rem;justify-content:center}
+.btn{padding:0.65rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);cursor:pointer;text-decoration:none}
+.btn-primary{background:linear-gradient(90deg,var(--neon),var(--neon-2));color:#041;box-shadow:0 6px 18px rgba(126,249,255,0.06);transform:translateZ(0)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.06)}
+.btn:focus{outline:3px solid rgba(126,249,255,0.12)}
+
+/* Neon hover pulsing */
+.btn-primary:hover{filter:brightness(1.05);box-shadow:0 10px 30px rgba(126,249,255,0.15),0 0 30px rgba(255,110,249,0.06)}
+
+/* Counters */
+.counters{display:flex;gap:1rem;justify-content:center;margin-top:2rem}
+.counter{text-align:center}
+.counter .count{display:block;font-weight:700;font-size:1.5rem;color:var(--neon)}
+
+/* Sections */
+.section{padding:3rem 0}
+.section h2{color:var(--neon);margin-bottom:0.5rem}
+.lead{color:var(--muted)}
+.grid{display:grid;gap:1rem}
+.cols-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--glass);padding:1rem;border-radius:12px}
+
+/* Faculty grid */
+.faculty-grid .teacher{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:10px;text-align:center}
+.faculty-grid img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0.5rem}
+.gallery-item{padding:0;border:0;background:none;border-radius:8px;overflow:hidden}
+.gallery-item img{width:100%;height:120px;object-fit:cover;display:block}
+
+/* Accordion */
+.accordion-item{border-radius:8px;background:rgba(255,255,255,0.02);margin-bottom:0.5rem}
+.accordion-toggle{width:100%;text-align:left;padding:0.75rem;border:0;background:transparent}
+.accordion-panel{padding:0.75rem;display:none}
+.accordion-toggle[aria-expanded="true"] + .accordion-panel{display:block}
+
+/* Footer */
+.site-footer{padding:1.5rem 0;border-top:1px solid rgba(255,255,255,0.03);text-align:center}
+.neon-subtle{color:var(--neon);opacity:0.9}
+.neon-subtle a{color:inherit;text-decoration:underline}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85));z-index:60}
+.lightbox[aria-hidden="false"]{display:flex}
+.lightbox-img{max-width:90%;max-height:80%;border-radius:10px}
+.lightbox-close{position:absolute;top:1rem;right:1rem;background:transparent;border:0;color:var(--neon);font-size:1.25rem}
+
+/* Responsive nav for small screens */
+@media (max-width:800px){
+  #nav-toggle{display:inline-block}
+  .main-nav ul{display:none;flex-direction:column;position:absolute;right:1rem;top:60px;background:linear-gradient(180deg, rgba(6,6,22,0.9), rgba(6,6,22,0.7));padding:0.5rem;border-radius:8px}
+  .main-nav ul.open{display:flex}
+}
+
+/* Focus styles for accessibility */
+a:focus,button:focus,input:focus,select:focus,textarea:focus{outline:3px solid rgba(126,249,255,0.08);outline-offset:2px}
+
+/* Print stylesheet: hide heavy visuals and show contact/admission details */
+@media print{
+  #nebula-canvas, .site-header, .gallery-grid, .lightbox, .btn{display:none}
+  body{background:white;color:black}
+}
+
+/* Fallback CSS animated nebula for low-power or no-three.js */
+@media (prefers-reduced-motion: reduce){
+  #nebula-canvas{display:none}
+  body{background:radial-gradient(ellipse at 10% 20%, #071028 0%, #02020a 40%, #000 100%)}
+}
